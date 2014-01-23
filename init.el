@@ -1,11 +1,10 @@
 (require 'package)
-(add-to-list 'load-path "~/Dropbox/emacs")
-(load "globalemacs")
-;;(set-default-font "Source Code Pro-11")
 
+;; Change tabs to spaces
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
 
+;; Put backups in folder in ~
 (setq backup-directory-alist `(("." . "~/.emacs-backups")))
 (setq backup-by-copying t)
 (setq delete-old-versions t
@@ -24,7 +23,6 @@
 ;(blink-cursor-mode 1)
 (line-number-mode 1)
 (global-linum-mode 1)
-
 
 (unless (package-installed-p 'scala-mode2)
   (package-refresh-contents) (package-install 'scala-mode2))

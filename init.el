@@ -29,3 +29,16 @@
 (unless (package-installed-p 'scala-mode2)
   (package-refresh-contents) (package-install 'scala-mode2))
 
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
+(setq visible-bell t)
+
+;; F11 toggles fullscreen
+;(toggle-frame-fullscreen)
+;; Remove scroll bar
+(scroll-bar-mode 0)
+
+;; Turn off tool bars and menus
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+

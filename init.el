@@ -15,6 +15,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+(load-theme 'solarized-dark t)
 (require 'uniquify)
 (show-paren-mode 1)
 (setq show-paren-delay 0)

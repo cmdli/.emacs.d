@@ -1,8 +1,14 @@
+;; Chris de la Iglesia
+
+;; Init package system
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
 
 ;; Change tabs to spaces
 (setq-default indent-tabs-mode nil)
 (setq-default c-basic-offset 4)
+(setq-default tab-width 4)
 
 ;; Put backups in folder in ~
 (setq backup-directory-alist `(("." . "~/.emacs-backups")))
@@ -11,9 +17,6 @@
       kept-new-versions 6
       kept-old-versions 2
       version-control t)
-
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
 
 (load-theme 'solarized-dark t)
 (require 'uniquify)
@@ -24,9 +27,12 @@
 ;(blink-cursor-mode 1)
 (line-number-mode 1)
 (global-linum-mode 1)
+(require 'graphene)
 
 (unless (package-installed-p 'scala-mode2)
   (package-refresh-contents) (package-install 'scala-mode2))
+(unless (package-installed-p 'graphene)
+  (package-refresh-contents) (package-install 'graphene))
 
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
@@ -39,5 +45,4 @@
 
 ;; Turn off tool bars and menus
 (tool-bar-mode 0)
-(menu-bar-mode 0)
 

@@ -18,15 +18,16 @@
       kept-old-versions 2
       version-control t)
 
+;; Download packages
 (setq package-list '(solarized-theme ibuffer graphene scala-mode2))
-
 (unless package-archive-contents
   (package-refresh-contents))
-
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
 
+
+;; Use packages
 (load-theme 'solarized-dark t)
 ;(require 'uniquify)
 (show-paren-mode 1)
@@ -38,6 +39,7 @@
 (global-linum-mode 1)
 ;(require 'graphene)
 
+;; Scratch buffer on startup
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 (setq visible-bell t)

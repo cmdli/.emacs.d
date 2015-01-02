@@ -19,7 +19,7 @@
       version-control t)
 
 ;; Download packages
-(setq package-list '(solarized-theme ibuffer graphene scala-mode2))
+(setq package-list '(solarized-theme scala-mode2))
 (unless package-archive-contents
   (package-refresh-contents))
 (dolist (package package-list)
@@ -37,7 +37,6 @@
 ;(blink-cursor-mode 1)
 (line-number-mode 1)
 (global-linum-mode 1)
-;(require 'graphene)
 
 ;; Scratch buffer on startup
 (setq initial-scratch-message "")

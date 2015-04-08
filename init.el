@@ -18,22 +18,27 @@
       kept-old-versions 2
       version-control t)
 
+;; Download packages
+(setq package-list '(solarized-theme scala-mode2))
+(unless package-archive-contents
+  (package-refresh-contents))
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+
+;; Use packages
 (load-theme 'solarized-dark t)
-(require 'uniquify)
+;(require 'uniquify)
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 (transient-mark-mode 1)
-(require 'ibuffer)
+;(require 'ibuffer)
 ;(blink-cursor-mode 1)
 (line-number-mode 1)
 (global-linum-mode 1)
-(require 'graphene)
 
-(unless (package-installed-p 'scala-mode2)
-  (package-refresh-contents) (package-install 'scala-mode2))
-(unless (package-installed-p 'graphene)
-  (package-refresh-contents) (package-install 'graphene))
-
+;; Scratch buffer on startup
 (setq initial-scratch-message "")
 (setq inhibit-startup-message t)
 (setq visible-bell t)
